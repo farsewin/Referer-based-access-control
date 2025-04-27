@@ -1,0 +1,11 @@
+<h1>Welcome to the Referer-based access control lab</h1>
+<p>This is a demonstration of a flawed Referer-based access control.</p>
+<% if (user) { %>
+<p>Welcome back, <%= user %>!</p>
+<a href="/dashboard">Go to Dashboard</a> |
+<a href="/logout" style="color: red">Logout</a>
+<% } else { %>
+<p>
+  <a href="/login">Login</a> to get started.
+</p>
+<% } %>
