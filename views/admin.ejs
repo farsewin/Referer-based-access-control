@@ -16,12 +16,18 @@
           <td><%= user.username %></td>
           <td><%= user.role %></td>
           <td>
-            <% if (user.role !== 'admin') { %>
-              <a href="/admin-roles?username=<%= user.username %>&action=upgrade">Promote to Admin</a>
-            <% } %>
+              <% if (user.role !== 'admin') { %>
+                <a href="/admin-roles?username=<%= user.username %>&action=upgrade" class="action-btn upgrade">Promote to Admin</a>
+              <% } else { %>
+                <a href="/admin-roles?username=<%= user.username %>&action=downgrade" class="action-btn downgrade">Demote to User</a>
+              <% } %>
           </td>
         </tr>
       <% }); %>
     </tbody>
   </table>
+</div>
+
+<div class="back-link">
+  <a href="/dashboard">Back to Dashboard</a>
 </div> 

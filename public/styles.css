@@ -156,3 +156,45 @@ form .message {
   border-radius: 8px;
   border: 1px solid #ddd;
 }
+
+/* Action Buttons */
+.action-btn {
+  padding: 6px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.action-btn.upgrade {
+  background-color: #28a745;
+}
+
+.action-btn.upgrade:hover {
+  background-color: #218838;
+  text-decoration: none;
+}
+
+.action-btn.downgrade {
+  background-color: #dc3545;
+}
+
+.action-btn.downgrade:hover {
+  background-color: #c82333;
+  text-decoration: none;
+}
+
+.back-link {
+  margin-top: 20px;
+}
+
+.back-link a {
+  color: #6c757d;
+  text-decoration: none;
+}
+
+.back-link a:hover {
+  color: #5a6268;
+  text-decoration: underline;
+}

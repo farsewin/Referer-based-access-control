@@ -69,10 +69,12 @@ router.get("/admin-roles", (req, res) => {
 
   // Vulnerable check - only validates Referer header
   if (referer.includes('/admin')) {
-    if (action === 'upgrade') {
+    if (action === 'upgrade' || action === 'downgrade') {
       if (USERS[username]) {
-        USERS[username].role = 'admin';
-        res.send(`User ${username} has been promoted to admin`);
+        // Set role based on action
+        USERS[username].role = action === 'upgrade' ? 'admin' : 'user';
+        // Only redirect, don't try to send another response
+        res.redirect('/admin');
       } else {
         res.status(400).send("User not found");
       }
