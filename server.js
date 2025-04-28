@@ -18,7 +18,7 @@ app.use(
   session({
     secret: "aloalo25", // Replace with your own secret key
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
   })
 );
 

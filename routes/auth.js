@@ -47,7 +47,7 @@ router.get("/admin", (req, res) => {
   
   // Only allow access if user is admin or request comes from an admin page
   const referer = req.get('Referer') || '';
-  if (req.session.user.role === 'admin' || referer.includes('/admin')) {
+  if (req.session.user.role === 'admin') {
     res.render("admin", { 
       title: "Admin Panel",
       users: Object.keys(USERS).map(username => ({
